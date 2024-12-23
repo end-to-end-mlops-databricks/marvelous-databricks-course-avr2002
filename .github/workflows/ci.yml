@@ -19,7 +19,7 @@ jobs:
 
       - name: Install the dependencies
         run: |
-          uv sync --extra "static-code-qa"
+          uv sync && uv install pre-commit
 
       - name: Run Lint, Format, and other static code quality checks
         run: |
