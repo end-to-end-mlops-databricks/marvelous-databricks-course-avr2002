@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build_and_test:
+  lint-format-and-static-code-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,9 +17,9 @@ jobs:
       - name: Set up Python
         run: uv python install 3.11
 
-      - name: Install the dependencies
+      - name: Install pre-commit
         run: |
-          uv sync && uv pip install pre-commit
+          uv pip install pre-commit
 
       - name: Run Lint, Format, and other static code quality checks
         run: |
